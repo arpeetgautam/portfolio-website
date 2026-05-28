@@ -7,42 +7,55 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>Arpit Gautam</h1>
-      <p>Computer engineer | Tech Enthusiast | Learner</p>
+    <header class="hero">
+      <div class="container">
+        <h1>Arpit Gautam</h1>
+        <p class="tagline">Digital Marketing Student • Aspiring Fullstack Developer</p>
+        <p class="subtitle">I love learning new things.</p>
+        <div class="social">
+          <a href="https://www.facebook.com/arpitgautamishere" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
     </header>
 
-    <section class="about">
-      <img src="profile.jpg" alt="Profile" />
-      <div>
-        <h2>About Me</h2>
-        <p>
-          Hello I am Arpit Gautam, a computer engineer. I studied in Kathmandu
-          University. I love travelling, kearning new things, singing, dancing
-          and all. I love to try new things.
-        </p>
-      </div>
-    </section>
+    <main class="container">
+      <section class="about card">
+        <div class="about-grid">
+          <img src="profile.jpg" alt="Profile" class="profile" />
+          <div>
+            <h2>Hello — I'm Arpit</h2>
+            <p>I live in Pulchowk and I'm originally from Ghorahi, Dang. I'm currently taking digital marketing classes and enjoy learning new things every day.</p>
+            <p>I have basic knowledge of fullstack development and build small projects to practise my skills.</p>
 
-    <section class="projects">
-      <h2>Projects</h2>
+            <div class="badges">
+              <span>Digital Marketing</span>
+              <span>Fullstack (basic)</span>
+              <span>Learner</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>Personal responsive portfolio website.</p>
-      </div>
+      <section class="projects">
+        <h2>Projects</h2>
 
-      <div class="card">
-        <h3>Todo App</h3>
-        <p>Task management app using JavaScript.</p>
-      </div>
-    </section>
+        <div class="card">
+          <h3>Portfolio Website</h3>
+          <p>Personal responsive portfolio website.</p>
+        </div>
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <p>Email: gautamarpit@gmail.com</p>
-      <p>Instagram id: arpit.gautam1</p>
-    </section>
+        <div class="card">
+          <h3>Todo App</h3>
+          <p>Task management app using JavaScript.</p>
+        </div>
+      </section>
+
+      <section class="contact card">
+        <h2>Contact</h2>
+        <p>Email: gautamarpit@gmail.com</p>
+        <p>Instagram: arpit.gautam1</p>
+      </section>
+    </main>
 
     <script src="script.js"></script>
   </body>
