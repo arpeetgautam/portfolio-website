@@ -63,12 +63,11 @@ header.hero {
 .profile {
   display: block;
   width: 100%;
-  max-width: 150px;
-  aspect-ratio: 1 / 1;
+  max-width: 180px;
   height: auto;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
+  object-fit: contain;
+  object-position: top center;
+  border-radius: 16px;
   background: linear-gradient(180deg, #f6f8fb, #e9eef8);
   border: 4px solid rgba(255, 255, 255, 0.7);
 }
