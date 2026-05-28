@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+
+.about {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  align-items: center;
+}
+
+.about img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.projects {
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.contact {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
