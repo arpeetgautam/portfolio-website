@@ -6,62 +6,79 @@ body {
 }
 
 header.hero {
-  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  background: linear-gradient(135deg, #5b7dd4 0%, #2c4a8f 100%);
   color: #fff;
   text-align: center;
-  padding: 60px 20px;
+  padding: 36px 20px 32px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin: 0 0 4px 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 .hero .tagline {
-  margin: 8px 0 0 0;
-  font-weight: 600;
-  opacity: 0.95;
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  opacity: 0.92;
+  letter-spacing: 0.3px;
 }
 
 .hero .subtitle {
-  margin-top: 6px;
-  color: rgba(255, 255, 255, 0.85);
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 
 .social a {
   display: inline-block;
-  margin-top: 12px;
-  background: rgba(255, 255, 255, 0.12);
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.18);
   color: #fff;
-  padding: 8px 14px;
-  border-radius: 20px;
+  padding: 7px 14px;
+  border-radius: 18px;
   text-decoration: none;
-  transition: background 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .social a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
 }
 
 .main-nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin: 24px auto 0;
+  gap: 8px;
+  margin: 12px auto 0;
 }
 
 .main-nav a {
   color: #fff;
-  background: rgba(255, 255, 255, 0.14);
-  padding: 10px 18px;
-  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  padding: 7px 14px;
+  border-radius: 18px;
   text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .main-nav a:hover {
-  background: rgba(255, 255, 255, 0.28);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.32);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
 
 .container {
