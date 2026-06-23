@@ -172,6 +172,54 @@ header.hero::before {
   margin-top: 0;
 }
 
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #0369a1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 8px 0;
+  position: relative;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.about-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 5px;
+  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+  border-radius: 3px;
+  margin-top: 12px;
+}
+
+.about-intro {
+  font-size: 1.05rem;
+  color: #334155;
+  font-weight: 500;
+  line-height: 1.75;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.about-description {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+
 h2 {
   font-family: "Outfit", sans-serif;
   font-size: 1.8rem;
@@ -466,6 +514,14 @@ h3 {
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.2rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-intro {
+    font-size: 0.95rem;
   }
 
   .container {
