@@ -3,37 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Arpit Gautam - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="hero">
       <div class="container">
-        <h1>Arpit Gautam</h1>
-        <p class="tagline">
-          Digital Marketing Student • Aspiring Fullstack Developer
-        </p>
-        <p class="subtitle">I love learning new things.</p>
-        <nav class="main-nav">
-          <a href="#about">About</a>
-          <a href="#education">Education</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <a href="images.html">Images</a>
-        </nav>
-        <div class="social">
-          <a
-            href="https://www.facebook.com/arpitgautamishere"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Facebook</a
-          >
+        <div class="hero-content">
+          <h1>Arpit Gautam</h1>
+          <p class="tagline">
+            Digital Marketing Student • Aspiring Fullstack Developer
+          </p>
+          <p class="subtitle">
+            I love learning new things and building cool projects.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <nav class="main-nav">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="images.html">Gallery</a>
+          </nav>
+          <div class="social">
+            <a
+              href="https://www.facebook.com/arpitgautamishere"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Facebook"
+              >f</a
+            >
+            <a
+              href="https://www.instagram.com/arpit.gautam1"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+              >@</a
+            >
+          </div>
         </div>
       </div>
     </header>
 
     <main class="container">
-      <section class="about card">
+      <section id="about" class="about card">
         <div class="about-grid">
           <img src="profile.jpg" alt="Profile" class="profile" />
           <div>
@@ -125,6 +146,13 @@
         </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Arpit Gautam. All rights reserved.</p>
+        <p class="footer-subtitle">Built with passion and curiosity.</p>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
