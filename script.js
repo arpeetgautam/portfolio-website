@@ -41,11 +41,14 @@ console.log("Portfolio Website Loaded - Enhanced with smooth interactions");
   if (!triggers.length) return;
 
   const lb = document.getElementById("lightbox");
+  if (!lb) return;
+
   const lbImg = lb.querySelector(".lightbox__img");
   const lbCaption = lb.querySelector(".lightbox__caption");
   const btnClose = lb.querySelector(".lightbox__close");
   const btnNext = lb.querySelector(".lightbox__next");
   const btnPrev = lb.querySelector(".lightbox__prev");
+  if (!lbImg || !lbCaption || !btnClose || !btnNext || !btnPrev) return;
 
   const items = triggers.map((t) => ({
     src: t.getAttribute("href"),
