@@ -343,6 +343,36 @@ main {
   line-height: 1.85;
 }
 
+.gallery-heading {
+  max-width: 920px;
+  margin: 40px auto 22px;
+  text-align: center;
+}
+
+.gallery-heading .eyebrow {
+  display: inline-flex;
+  color: #9fc8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.gallery-heading h3 {
+  margin: 0;
+  font-size: clamp(1.95rem, 2.5vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #eef4ff;
+}
+
+.gallery-heading .gallery-copy {
+  margin: 16px auto 0;
+  max-width: 760px;
+  color: #b8c5e2;
+  line-height: 1.75;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
