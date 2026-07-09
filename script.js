@@ -112,3 +112,100 @@ console.log("Portfolio Website Loaded - Enhanced with smooth interactions");
     if (e.key === "ArrowLeft") prev();
   });
 })();
+
+// Carousel slider
+(function () {
+  const carousel = document.querySelector(".carousel");
+  if (!carousel) return;
+
+  const track = carousel.querySelector(".carousel__track");
+  const slides = Array.from(track.querySelectorAll(".carousel__slide"));
+  const prevBtn = carousel.querySelector(".carousel__prev");
+  const nextBtn = carousel.querySelector(".carousel__next");
+  const indicators = carousel.querySelector(".carousel__indicators");
+
+  let index = 0;
+  let autoplayId = null;
+  const autoplayDelay = 4000;
+
+  // build indicators
+  slides.forEach((_, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
+    btn.addEventListener("click", () => goTo(i));
+    indicators.appendChild(btn);
+  });
+
+  function update() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    Array.from(indicators.children).forEach((b, i) =>
+      b.setAttribute("aria-selected", i === index),
+    );
+  }
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    update();
+  }
+
+  function next() {
+    goTo(index + 1);
+  }
+  function prev() {
+    goTo(index - 1);
+  }
+
+  nextBtn.addEventListener("click", next);
+  prevBtn.addEventListener("click", prev);
+
+  // autoplay
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayId = setInterval(next, autoplayDelay);
+  }
+  function stopAutoplay() {
+    if (autoplayId) clearInterval(autoplayId);
+    autoplayId = null;
+  }
+
+  carousel.addEventListener("mouseenter", stopAutoplay);
+  carousel.addEventListener("focusin", stopAutoplay);
+  carousel.addEventListener("mouseleave", startAutoplay);
+
+  // keyboard
+  carousel.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+  });
+
+  // touch support
+  let startX = 0;
+  let deltaX = 0;
+  carousel.addEventListener(
+    "touchstart",
+    (e) => {
+      startX = e.touches[0].clientX;
+      stopAutoplay();
+    },
+    { passive: true },
+  );
+  carousel.addEventListener(
+    "touchmove",
+    (e) => {
+      deltaX = e.touches[0].clientX - startX;
+    },
+    { passive: true },
+  );
+  carousel.addEventListener("touchend", () => {
+    if (Math.abs(deltaX) > 40) {
+      deltaX < 0 ? next() : prev();
+    }
+    deltaX = 0;
+    startAutoplay();
+  });
+
+  // init
+  update();
+  startAutoplay();
+})();
