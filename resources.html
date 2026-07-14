@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Curated resources, tools, and learning materials for digital marketing and fullstack development by Arpit Gautam."
+    />
+    <title>Resources & Learning Hub — Arpit Gautam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .resource-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .resource-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .resource-card:hover {
+        background: var(--surface-strong);
+        border-color: var(--accent);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 48px rgba(82, 173, 255, 0.15);
+      }
+
+      .resource-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .resource-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(82, 173, 255, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .resource-card h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        color: var(--text);
+      }
+
+      .resource-card .category {
+        display: inline-block;
+        background: rgba(82, 173, 255, 0.15);
+        color: var(--accent);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .resource-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0.75rem 0;
+      }
+
+      .resource-link {
+        display: inline-block;
+        margin-top: 1rem;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+      }
+
+      .resource-link:hover {
+        color: var(--accent-strong);
+        transform: translateX(4px);
+      }
+
+      .resource-link::after {
+        content: " →";
+        display: inline-block;
+        transition: transform 0.2s ease;
+      }
+
+      .resources-section {
+        margin-bottom: 3rem;
+      }
+
+      .resources-section h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem 0;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--border),
+          transparent
+        );
+        margin: 2rem 0;
+      }
+
+      .filter-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+      }
+
+      .filter-tag {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 0.9rem;
+      }
+
+      .filter-tag:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: rgba(82, 173, 255, 0.05);
+      }
+
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .stat-card {
+        background: linear-gradient(
+          135deg,
+          rgba(82, 173, 255, 0.1),
+          rgba(104, 72, 255, 0.1)
+        );
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="background-glow" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <header class="hero">
+        <div class="hero-top">
+          <div class="brand">
+            <div class="brand__mark"><span>A</span></div>
+            <div class="brand__name">
+              <strong>Arpit Gautam</strong>
+              <small>Digital Marketing & Fullstack</small>
+            </div>
+          </div>
+
+          <nav class="main-nav" aria-label="Primary navigation">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="images.html">Gallery</a>
+            <a class="nav-link active" href="resources.html">Resources</a>
+          </nav>
+        </div>
+
+        <div class="hero-copy">
+          <p class="label">Learn & Build Better</p>
+          <h1>
+            A carefully curated collection of tools, platforms, and resources
+            that power modern digital marketing and fullstack development.
+          </h1>
+          <p class="lead">
+            Discover the tools and platforms I rely on daily. From design to
+            development, analytics to automation—everything you need to build,
+            learn, and scale in today's digital landscape.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#resources">Explore Resources</a>
+            <a class="button--ghost" href="index.html#contact">Get in touch</a>
+          </div>
+        </div>
+      </header>
+
+      <main id="resources">
+        <!-- Stats Section -->
+        <section class="section">
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Tools & Platforms</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Learning Resources</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Useful Articles</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Web Development & Fullstack -->
+        <section class="resources-section">
+          <h2>💻 Web Development & Fullstack</h2>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <div class="resource-icon">⚛️</div>
+              <span class="category">Frontend</span>
+              <h3>React</h3>
+              <p>
+                A JavaScript library for building user interfaces with
+                component-based architecture and state management.
+              </p>
+              <a href="https://react.dev" class="resource-link">Learn React</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🔵</div>
+              <span class="category">Backend</span>
+              <h3>Node.js</h3>
+              <p>
+                JavaScript runtime for building fast, scalable server-side
+                applications and APIs.
+              </p>
+              <a href="https://nodejs.org" class="resource-link"
+                >Explore Node.js</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🐘</div>
+              <span class="category">Database</span>
+              <h3>PostgreSQL</h3>
+              <p>
+                Powerful, open-source relational database system for robust data
+                management and complex queries.
+              </p>
+              <a href="https://postgresql.org" class="resource-link"
+                >View Docs</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🚀</div>
+              <span class="category">Deployment</span>
+              <h3>Vercel</h3>
+              <p>
+                Modern platform for deploying frontend applications with zero
+                configuration and automatic scaling.
+              </p>
+              <a href="https://vercel.com" class="resource-link">Get Started</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🎨</div>
+              <span class="category">UI/UX</span>
+              <h3>Figma</h3>
+              <p>
+                Collaborative design platform for creating prototypes,
+                wireframes, and high-fidelity designs.
+              </p>
+              <a href="https://figma.com" class="resource-link">Design Now</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">📦</div>
+              <span class="category">Backend</span>
+              <h3>Express.js</h3>
+              <p>
+                Minimal and flexible Node.js web application framework for
+                building REST APIs and web servers.
+              </p>
+              <a href="https://expressjs.com" class="resource-link"
+                >Learn Express</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Digital Marketing Tools -->
+        <section class="resources-section">
+          <h2>📊 Digital Marketing & Analytics</h2>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <div class="resource-icon">📈</div>
+              <span class="category">Analytics</span>
+              <h3>Google Analytics 4</h3>
+              <p>
+                Advanced web analytics for tracking user behavior, conversions,
+                and measuring campaign performance.
+              </p>
+              <a href="https://analytics.google.com" class="resource-link"
+                >Access GA4</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🎯</div>
+              <span class="category">SEO</span>
+              <h3>Ahrefs</h3>
+              <p>
+                Comprehensive SEO toolset for keyword research, competitor
+                analysis, and backlink tracking.
+              </p>
+              <a href="https://ahrefs.com" class="resource-link"
+                >Explore Ahrefs</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">💌</div>
+              <span class="category">Email Marketing</span>
+              <h3>Mailchimp</h3>
+              <p>
+                Email marketing and automation platform for managing campaigns,
+                lists, and subscriber engagement.
+              </p>
+              <a href="https://mailchimp.com" class="resource-link"
+                >Start Email</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">📱</div>
+              <span class="category">Social Media</span>
+              <h3>Buffer</h3>
+              <p>
+                Social media management platform for scheduling posts, tracking
+                engagement, and analyzing metrics.
+              </p>
+              <a href="https://buffer.com" class="resource-link"
+                >Schedule Posts</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🔍</div>
+              <span class="category">SEM</span>
+              <h3>Google Ads</h3>
+              <p>
+                Paid advertising platform for reaching customers through search,
+                display, and video campaigns.
+              </p>
+              <a href="https://ads.google.com" class="resource-link"
+                >Create Campaign</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">💬</div>
+              <span class="category">CRM</span>
+              <h3>HubSpot</h3>
+              <p>
+                Integrated CRM platform for managing contacts, sales pipelines,
+                and marketing automation.
+              </p>
+              <a href="https://hubspot.com" class="resource-link"
+                >Explore HubSpot</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Learning & Growth -->
+        <section class="resources-section">
+          <h2>📚 Learning Platforms & Communities</h2>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <div class="resource-icon">🎓</div>
+              <span class="category">Courses</span>
+              <h3>Udemy</h3>
+              <p>
+                Online learning platform with thousands of courses on web
+                development, marketing, and business skills.
+              </p>
+              <a href="https://udemy.com" class="resource-link"
+                >Browse Courses</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">💡</div>
+              <span class="category">Development</span>
+              <h3>Stack Overflow</h3>
+              <p>
+                Community-driven Q&A platform for developers to ask questions,
+                share solutions, and find answers.
+              </p>
+              <a href="https://stackoverflow.com" class="resource-link"
+                >Find Solutions</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🌐</div>
+              <span class="category">Newsletter</span>
+              <h3>Dev.to</h3>
+              <p>
+                Community for developers to share articles, discuss ideas, and
+                stay updated on industry trends.
+              </p>
+              <a href="https://dev.to" class="resource-link">Read Articles</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🎬</div>
+              <span class="category">Video</span>
+              <h3>YouTube Channels</h3>
+              <p>
+                Curated channels for web development tutorials, digital
+                marketing strategies, and tech education.
+              </p>
+              <a href="https://youtube.com" class="resource-link">Watch Now</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🔗</div>
+              <span class="category">Community</span>
+              <h3>GitHub</h3>
+              <p>
+                Open-source platform for version control, collaboration, and
+                discovering projects from the community.
+              </p>
+              <a href="https://github.com" class="resource-link"
+                >Explore GitHub</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">📖</div>
+              <span class="category">Documentation</span>
+              <h3>MDN Web Docs</h3>
+              <p>
+                Comprehensive reference for web technologies, JavaScript, CSS,
+                and HTML best practices.
+              </p>
+              <a href="https://mdn.org" class="resource-link">Learn More</a>
+            </div>
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Developer Tools & Utilities -->
+        <section class="resources-section">
+          <h2>🛠️ Developer Tools & Utilities</h2>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <div class="resource-icon">🔧</div>
+              <span class="category">Code Editor</span>
+              <h3>Visual Studio Code</h3>
+              <p>
+                Lightweight, powerful code editor with extensions and features
+                for productive development.
+              </p>
+              <a href="https://code.visualstudio.com" class="resource-link"
+                >Download</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🎨</div>
+              <span class="category">Design</span>
+              <h3>Tailwind CSS</h3>
+              <p>
+                Utility-first CSS framework for building modern responsive
+                interfaces with minimal custom CSS.
+              </p>
+              <a href="https://tailwindcss.com" class="resource-link"
+                >Get Started</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">📝</div>
+              <span class="category">Version Control</span>
+              <h3>Git & GitHub</h3>
+              <p>
+                Distributed version control system for managing code changes,
+                collaboration, and project history.
+              </p>
+              <a href="https://git-scm.com" class="resource-link">Learn Git</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">⚡</div>
+              <span class="category">Build Tool</span>
+              <h3>Webpack</h3>
+              <p>
+                Module bundler for JavaScript applications, optimizing assets
+                and managing dependencies.
+              </p>
+              <a href="https://webpack.js.org" class="resource-link"
+                >Documentation</a
+              >
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🧪</div>
+              <span class="category">Testing</span>
+              <h3>Jest</h3>
+              <p>
+                JavaScript testing framework with zero configuration, perfect
+                for unit and integration tests.
+              </p>
+              <a href="https://jestjs.io" class="resource-link">Test Code</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">🔐</div>
+              <span class="category">API</span>
+              <h3>Postman</h3>
+              <p>
+                API development platform for designing, testing, and debugging
+                REST APIs efficiently.
+              </p>
+              <a href="https://postman.com" class="resource-link">Download</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+          <div style="text-align: center; padding: 2rem 0; margin-top: 3rem">
+            <h2 style="margin-bottom: 1rem">Want to know more?</h2>
+            <p
+              style="
+                color: var(--muted);
+                margin-bottom: 1.5rem;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+              "
+            >
+              I'm always happy to discuss tools, technologies, and best
+              practices for digital marketing and web development.
+            </p>
+            <a href="index.html#contact" class="button">Start a conversation</a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <p>
+            &copy; 2024 Arpit Gautam. Building the future, one project at a
+            time.
+          </p>
+          <nav class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="images.html">Gallery</a>
+            <a href="resources.html">Resources</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
