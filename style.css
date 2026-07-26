@@ -405,7 +405,7 @@ main {
   grid-template-columns: 0.9fr 1.1fr;
   gap: 24px;
   align-items: center;
-  margin: 26px 0 32px;
+  margin: 26px 0 20px;
   padding: 24px;
   border-radius: 28px;
   background: linear-gradient(
@@ -415,6 +415,15 @@ main {
   );
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.2);
+}
+
+.featured-family--secondary {
+  grid-template-columns: 1.1fr 0.9fr;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 172, 93, 0.12),
+    rgba(255, 255, 255, 0.05)
+  );
 }
 
 .featured-family__content {
@@ -755,7 +764,8 @@ main {
     grid-column: 1 / -1;
   }
 
-  .featured-family {
+  .featured-family,
+  .featured-family--secondary {
     grid-template-columns: 1fr;
   }
 }
