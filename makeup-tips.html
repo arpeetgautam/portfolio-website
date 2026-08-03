@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Makeup tips, tutorials, step-by-step application process, and recommended beauty brands for a polished and confident look."
+    />
+    <title>Makeup Tips — Arpit Gautam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .glass-card {
+        background: rgba(10, 14, 28, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+        border-radius: 24px;
+      }
+
+      .hero-copy {
+        margin-top: 3rem;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .stat-block {
+        padding: 1.2rem 1.3rem;
+      }
+
+      .stat-block strong {
+        display: block;
+        font-size: 1.4rem;
+        color: var(--accent);
+        margin-bottom: 0.35rem;
+      }
+
+      .stat-block span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .tips-grid,
+      .brand-grid,
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-top: 2rem;
+      }
+
+      .tips-card,
+      .brand-card,
+      .process-card {
+        padding: 1.4rem;
+      }
+
+      .tips-card h3,
+      .brand-card h3,
+      .process-card h3 {
+        margin: 0.5rem 0 0.8rem;
+        font-size: 1.18rem;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9fc8ff;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(82, 173, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .tips-list,
+      .process-list,
+      .brand-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .tips-list li,
+      .process-list li,
+      .brand-list li {
+        padding: 0.8rem 0.95rem;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #d8e2ff;
+        line-height: 1.55;
+      }
+
+      .section-intro {
+        max-width: 820px;
+        margin: 0 auto 1.5rem;
+        text-align: center;
+      }
+
+      .section-intro h2 {
+        margin: 0 0 0.6rem;
+        font-size: 1.7rem;
+      }
+
+      .section-intro p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      @media (max-width: 700px) {
+        .hero {
+          padding: 48px 20px 36px;
+        }
+
+        main {
+          padding: 0 20px 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="background-glow" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <header class="hero">
+        <div class="hero-top">
+          <div class="brand">
+            <div class="brand__mark"><span>A</span></div>
+            <div class="brand__name">
+              <strong>Arpit Gautam</strong>
+              <small>Digital Marketing & Fullstack</small>
+            </div>
+          </div>
+
+          <nav class="main-nav" aria-label="Primary navigation">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="images.html">Gallery</a>
+            <a class="nav-link" href="resources.html">Resources</a>
+            <a class="nav-link" href="marketing-tips.html">Marketing Tips</a>
+            <a class="nav-link active" href="makeup-tips.html">Makeup Tips</a>
+            <a class="nav-link" href="travel.html">Travel</a>
+          </nav>
+        </div>
+
+        <div class="hero-copy">
+          <p class="label">Beauty guide</p>
+          <h1>
+            Makeup tips, tutorials, and brand picks for elegant everyday beauty.
+          </h1>
+          <p class="lead">
+            Learn the basic makeup process, discover easy routines, and explore
+            reliable beauty brands that help you create a fresh, polished look
+            with confidence.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#process">See the process</a>
+            <a class="button--ghost" href="#brands">Best beauty brands</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section">
+          <div class="section-intro">
+            <h2>Simple beauty habits that elevate your look.</h2>
+            <p>
+              Great makeup starts with skin prep, product balance, and a routine
+              that supports your features rather than overloading them.
+            </p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="glass-card stat-block">
+              <strong>4 steps</strong>
+              <span>Core makeup process from prep to final finish.</span>
+            </article>
+            <article class="glass-card stat-block">
+              <strong>8+ tips</strong>
+              <span>Quick beauty techniques for smoother application.</span>
+            </article>
+            <article class="glass-card stat-block">
+              <strong>5 brands</strong>
+              <span
+                >Reliable makeup brands for different budgets and beauty
+                goals.</span
+              >
+            </article>
+          </div>
+
+          <div class="tips-grid" id="tips">
+            <article class="glass-card tips-card">
+              <div class="chip">Daily tips</div>
+              <h3>Essential makeup tips</h3>
+              <ul class="tips-list">
+                <li>
+                  Start with a clean, moisturized base so makeup sits evenly.
+                </li>
+                <li>
+                  Use a thin layer of primer if you want longer wear and a
+                  smoother finish.
+                </li>
+                <li>
+                  Blend foundation with a damp sponge for a more natural,
+                  seamless look.
+                </li>
+                <li>
+                  Choose one bold feature at a time so your face still looks
+                  balanced.
+                </li>
+                <li>
+                  Lock your look with a light setting spray or powder for
+                  staying power.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card tips-card">
+              <div class="chip">Tutorial</div>
+              <h3>Beginner-friendly tutorials</h3>
+              <ul class="tips-list">
+                <li>
+                  For a fresh face, apply skin tint, concealer, cream blush, and
+                  a soft gloss.
+                </li>
+                <li>
+                  For glam makeup, focus on softly defined brows, mascara, and a
+                  blended eye-shadow.
+                </li>
+                <li>
+                  Use a small brush to layer products gradually instead of
+                  applying too much at once.
+                </li>
+                <li>
+                  Highlight the high points of the face only—cheekbones, inner
+                  corner, and cupid's bow.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-intro">
+            <h2>The makeup process from start to finish.</h2>
+            <p>
+              A simple step-by-step routine helps you move from skin prep to a
+              polished final look without feeling overwhelmed.
+            </p>
+          </div>
+
+          <div class="process-grid" id="process">
+            <article class="glass-card process-card">
+              <div class="chip">Step 1</div>
+              <h3>Prep the skin</h3>
+              <ul class="process-list">
+                <li>
+                  Cleanse, moisturize, and use SPF if you are heading out during
+                  the day.
+                </li>
+                <li>
+                  Apply primer only where you want longer wear or a smoother
+                  base.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card process-card">
+              <div class="chip">Step 2</div>
+              <h3>Build the base</h3>
+              <ul class="process-list">
+                <li>
+                  Use a lightweight foundation or skin tint matched to your skin
+                  tone.
+                </li>
+                <li>
+                  Blend concealer around the eyes, around the nose, and on any
+                  blemishes.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card process-card">
+              <div class="chip">Step 3</div>
+              <h3>Define the features</h3>
+              <ul class="process-list">
+                <li>
+                  Shape brows with a pencil or tinted brow gel for a soft,
+                  natural frame.
+                </li>
+                <li>
+                  Add mascara, a subtle liner, and light eyeshadow to enhance
+                  your eyes.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card process-card">
+              <div class="chip">Step 4</div>
+              <h3>Finish and set</h3>
+              <ul class="process-list">
+                <li>Use blush and bronzer to add life back to the face.</li>
+                <li>
+                  Finish with lip color, highlighter, and setting spray for a
+                  lasting look.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-intro">
+            <h2>
+              Beauty brands that are widely loved for quality and results.
+            </h2>
+            <p>
+              The best makeup brand often depends on your skin type, budget, and
+              preferred finish. These names are popular for reliable formulas
+              and beginner-friendly product ranges.
+            </p>
+          </div>
+
+          <div class="brand-grid" id="brands">
+            <article class="glass-card brand-card">
+              <div class="chip">Popular pick</div>
+              <h3>Maybelline</h3>
+              <ul class="brand-list">
+                <li>
+                  Affordable, accessible, and great for everyday makeup basics.
+                </li>
+                <li>
+                  Known for mascaras, foundations, and soft glam color products.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card brand-card">
+              <div class="chip">Pro favorite</div>
+              <h3>MAC</h3>
+              <ul class="brand-list">
+                <li>
+                  Excellent for professional finishes, especially foundations
+                  and lip colors.
+                </li>
+                <li>
+                  Offers a wide range of shades and several long-wear formulas.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card brand-card">
+              <div class="chip">Soft glam</div>
+              <h3>NYX Professional Makeup</h3>
+              <ul class="brand-list">
+                <li>
+                  Ideal for bold color and easy-to-use products for creative
+                  looks.
+                </li>
+                <li>
+                  Great for experimenting with liners, blush, and lip products.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card brand-card">
+              <div class="chip">Luxury feel</div>
+              <h3>L'Oréal</h3>
+              <ul class="brand-list">
+                <li>
+                  Reliable for both skin care and makeup, with impressive shade
+                  range.
+                </li>
+                <li>
+                  A strong choice for budget-friendly, polished beauty tools and
+                  formulas.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
