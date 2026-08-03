@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A curated travel guide featuring practical travel tips, iconic destinations, unforgettable activities, souvenirs, and local experiences around the world."
+    />
+    <title>Travel — Arpit Gautam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .glass-card {
+        background: rgba(10, 14, 28, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+        border-radius: 24px;
+      }
+
+      .hero-copy {
+        margin-top: 3rem;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+      }
+
+      .stats-grid,
+      .destinations-grid,
+      .experiences-grid,
+      .souvenirs-grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        margin-top: 2rem;
+      }
+
+      .stat-block {
+        padding: 1.25rem 1.3rem;
+      }
+
+      .stat-block strong {
+        display: block;
+        font-size: 1.4rem;
+        color: var(--accent);
+        margin-bottom: 0.4rem;
+      }
+
+      .stat-block span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .section-intro {
+        max-width: 840px;
+        margin: 0 auto 1.5rem;
+        text-align: center;
+      }
+
+      .section-intro h2 {
+        margin: 0 0 0.6rem;
+        font-size: 1.85rem;
+      }
+
+      .section-intro p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .tips-grid,
+      .destinations-grid,
+      .experiences-grid,
+      .souvenirs-grid {
+        margin-top: 1.5rem;
+      }
+
+      .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .tips-card,
+      .experience-card,
+      .souvenir-card {
+        padding: 1.3rem;
+      }
+
+      .tips-card h3,
+      .experience-card h3,
+      .souvenir-card h3 {
+        margin: 0.5rem 0 0.85rem;
+        font-size: 1.15rem;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9fc8ff;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(82, 173, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .tips-list,
+      .experience-list,
+      .souvenir-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.72rem;
+      }
+
+      .tips-list li,
+      .experience-list li,
+      .souvenir-list li {
+        padding: 0.8rem 0.95rem;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #d8e2ff;
+        line-height: 1.55;
+      }
+
+      .destinations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .destination-card {
+        overflow: hidden;
+        padding: 0;
+      }
+
+      .destination-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .destination-content {
+        padding: 1.25rem;
+      }
+
+      .destination-content h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.15rem;
+      }
+
+      .destination-content p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .badge {
+        display: inline-flex;
+        margin-bottom: 0.7rem;
+        padding: 0.38rem 0.7rem;
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #d6e9ff;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .souvenirs-grid,
+      .experiences-grid {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      }
+
+      .small-note {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 700px) {
+        .hero {
+          padding: 48px 20px 36px;
+        }
+
+        main {
+          padding: 0 20px 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="background-glow" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <header class="hero">
+        <div class="hero-top">
+          <div class="brand">
+            <div class="brand__mark"><span>A</span></div>
+            <div class="brand__name">
+              <strong>Arpit Gautam</strong>
+              <small>Digital Marketing & Fullstack</small>
+            </div>
+          </div>
+
+          <nav class="main-nav" aria-label="Primary navigation">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="images.html">Gallery</a>
+            <a class="nav-link" href="resources.html">Resources</a>
+            <a class="nav-link" href="marketing-tips.html">Marketing Tips</a>
+            <a class="nav-link active" href="travel.html">Travel</a>
+          </nav>
+        </div>
+
+        <div class="hero-copy">
+          <p class="label">Adventure Guide</p>
+          <h1>
+            Travel smarter, explore deeper, and make every journey
+            unforgettable.
+          </h1>
+          <p class="lead">
+            Find quick travel tips, worldwide destinations with breathtaking HD
+            images, memorable activities, and souvenirs that capture the spirit
+            of each place.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#destinations">Explore destinations</a>
+            <a class="button--ghost" href="#tips">Travel tips</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section">
+          <div class="section-intro">
+            <h2>Journey-ready ideas for every traveler.</h2>
+            <p>
+              Whether you love iconic cities, mountain escapes, beach holidays,
+              or cultural discovery, this travel guide provides practical
+              inspiration and memorable highlights from around the world.
+            </p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="glass-card stat-block">
+              <strong>12+</strong>
+              <span
+                >hand-picked destinations and experience ideas across
+                continents.</span
+              >
+            </article>
+            <article class="glass-card stat-block">
+              <strong>7</strong>
+              <span
+                >smart planning tips for smoother, more affordable travel.</span
+              >
+            </article>
+            <article class="glass-card stat-block">
+              <strong>20+</strong>
+              <span
+                >famous local souvenirs and iconic specialties to remember each
+                journey.</span
+              >
+            </article>
+          </div>
+
+          <div class="tips-grid" id="tips">
+            <article class="glass-card tips-card">
+              <div class="chip">Travel tips</div>
+              <h3>Plan before you fly</h3>
+              <ul class="tips-list">
+                <li>
+                  Book flights early, but keep a flexible schedule for weather
+                  or local events.
+                </li>
+                <li>
+                  Carry a digital and printed backup of your passport, boarding
+                  pass, and reservations.
+                </li>
+                <li>
+                  Pack a universal adapter, power bank, and one comfortable
+                  outfit for your arrival day.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card tips-card">
+              <div class="chip">Budget tips</div>
+              <h3>Travel light and spend smart</h3>
+              <ul class="tips-list">
+                <li>
+                  Use local transit, walk where possible, and research free
+                  attractions in advance.
+                </li>
+                <li>
+                  Choose neighborhoods with strong transit access to reduce
+                  commuting time and cost.
+                </li>
+                <li>
+                  Save money on food by trying local markets, bakeries, and
+                  street-food districts.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card tips-card">
+              <div class="chip">Culture tips</div>
+              <h3>Respect the local scene</h3>
+              <ul class="tips-list">
+                <li>
+                  Learn a few basic local phrases to build warmth and goodwill
+                  with residents.
+                </li>
+                <li>
+                  Dress according to cultural expectations in religious or
+                  heritage-heavy destinations.
+                </li>
+                <li>
+                  Carry cash in smaller amounts for local shops, markets, and
+                  quick neighborhood stops.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="destinations">
+          <div class="section-intro">
+            <h2>Iconic places to travel in the world</h2>
+            <p>
+              Each destination below brings a different mix of scenery, culture,
+              and experiences that help create a truly memorable trip.
+            </p>
+          </div>
+
+          <div class="destinations-grid">
+            <article class="glass-card destination-card">
+              <img
+                src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80"
+                alt="Paris skyline at sunset"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="destination-content">
+                <span class="badge">France</span>
+                <h3>Paris</h3>
+                <p>
+                  Walk through romantic boulevards, visit world-class museums,
+                  and enjoy café culture with a classic Eiffel Tower backdrop.
+                </p>
+              </div>
+            </article>
+
+            <article class="glass-card destination-card">
+              <img
+                src="https://images.unsplash.com/photo-1526481280695-3c4691b0d307?auto=format&fit=crop&w=1200&q=80"
+                alt="Kyoto temple and garden"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="destination-content">
+                <span class="badge">Japan</span>
+                <h3>Kyoto</h3>
+                <p>
+                  Discover serene temples, bamboo groves, and timeless tea
+                  houses that offer a beautiful mix of heritage and calm.
+                </p>
+              </div>
+            </article>
+
+            <article class="glass-card destination-card">
+              <img
+                src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1200&q=80"
+                alt="Dubai city and skyline"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="destination-content">
+                <span class="badge">UAE</span>
+                <h3>Dubai</h3>
+                <p>
+                  From desert safaris to futuristic architecture and luxury
+                  shopping, Dubai blends adventure with standout style.
+                </p>
+              </div>
+            </article>
+
+            <article class="glass-card destination-card">
+              <img
+                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80"
+                alt="Bali beach and tropical coastline"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="destination-content">
+                <span class="badge">Indonesia</span>
+                <h3>Bali</h3>
+                <p>
+                  Relax on tropical beaches, explore rice terraces, and enjoy
+                  spiritual retreats and wellness experiences in a lush island
+                  setting.
+                </p>
+              </div>
+            </article>
+
+            <article class="glass-card destination-card">
+              <img
+                src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=1200&q=80"
+                alt="Santorini island view"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="destination-content">
+                <span class="badge">Greece</span>
+                <h3>Santorini</h3>
+                <p>
+                  Soak in stunning whitewashed cliffside views, enjoy golden
+                  sunset dinners, and sail across the Aegean Sea.
+                </p>
+              </div>
+            </article>
+
+            <article class="glass-card destination-card">
+              <img
+                src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1200&q=80"
+                alt="New York skyline"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="destination-content">
+                <span class="badge">USA</span>
+                <h3>New York</h3>
+                <p>
+                  Experience iconic landmarks, world-famous food scenes,
+                  Broadway energy, and the nonstop pulse of one of the world’s
+                  greatest cities.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-intro">
+            <h2>Things to do in different parts of the world</h2>
+            <p>
+              Local experiences help every trip feel personal, immersive, and
+              memorable. These ideas offer a balance of adventure, culture, and
+              discovery.
+            </p>
+          </div>
+
+          <div class="experiences-grid">
+            <article class="glass-card experience-card">
+              <div class="chip">Europe</div>
+              <h3>Sunset walks in Lisbon</h3>
+              <ul class="experience-list">
+                <li>Ride the tram through hills and hidden neighborhoods.</li>
+                <li>
+                  Visit local tile museums and famous miradouros for incredible
+                  views.
+                </li>
+                <li>
+                  Enjoy fresh pastries and live music in the evening atmosphere.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card experience-card">
+              <div class="chip">Asia</div>
+              <h3>Temple mornings in Bangkok</h3>
+              <ul class="experience-list">
+                <li>
+                  Start early with a peaceful temple visit before the crowds
+                  arrive.
+                </li>
+                <li>
+                  Take a river cruise to watch city life unfold along the water.
+                </li>
+                <li>
+                  Shop at floating markets for local snacks, crafts, and
+                  colorful finds.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card experience-card">
+              <div class="chip">Africa</div>
+              <h3>Safari adventure in Kenya</h3>
+              <ul class="experience-list">
+                <li>
+                  Go on a dawn game drive to spot wildlife in its natural
+                  habitat.
+                </li>
+                <li>
+                  Stay in a lodge where local guides share stories about the
+                  land.
+                </li>
+                <li>Visit safari towns for handcrafted décor and textiles.</li>
+              </ul>
+            </article>
+
+            <article class="glass-card experience-card">
+              <div class="chip">Americas</div>
+              <h3>City energy in Mexico City</h3>
+              <ul class="experience-list">
+                <li>
+                  Explore food markets filled with tacos, spices, and fresh
+                  fruit.
+                </li>
+                <li>
+                  Visit art museums and street murals that reveal the city’s
+                  creative pulse.
+                </li>
+                <li>
+                  Spend a day in nearby villages for colorful craft and regional
+                  food traditions.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-intro">
+            <h2>Souvenirs to buy and what each place is famous for</h2>
+            <p>
+              Bring home a small memory from your trip with handmade items,
+              regional specialties, and iconic finds that say something
+              authentic about the destination.
+            </p>
+          </div>
+
+          <div class="souvenirs-grid">
+            <article class="glass-card souvenir-card">
+              <div class="chip">Italy</div>
+              <h3>Souvenir to buy</h3>
+              <ul class="souvenir-list">
+                <li>Leather goods from Florence.</li>
+                <li>Murano glass from Venice.</li>
+              </ul>
+              <p class="small-note">
+                Famous for: art, pasta, and timeless fashion.
+              </p>
+            </article>
+
+            <article class="glass-card souvenir-card">
+              <div class="chip">India</div>
+              <h3>Souvenir to buy</h3>
+              <ul class="souvenir-list">
+                <li>Handwoven textiles and colorful scarves.</li>
+                <li>Tea, spices, and handcrafted jewelry.</li>
+              </ul>
+              <p class="small-note">
+                Famous for: spices, heritage craft, and diverse cuisine.
+              </p>
+            </article>
+
+            <article class="glass-card souvenir-card">
+              <div class="chip">Thailand</div>
+              <h3>Souvenir to buy</h3>
+              <ul class="souvenir-list">
+                <li>Silk products and hand-painted ceramics.</li>
+                <li>Thai herbs, snacks, and fragrant oils.</li>
+              </ul>
+              <p class="small-note">
+                Famous for: temples, markets, and tropical street food.
+              </p>
+            </article>
+
+            <article class="glass-card souvenir-card">
+              <div class="chip">Morocco</div>
+              <h3>Souvenir to buy</h3>
+              <ul class="souvenir-list">
+                <li>Blue pottery and handwoven rugs.</li>
+                <li>Argan beauty products and intricate lanterns.</li>
+              </ul>
+              <p class="small-note">
+                Famous for: vibrant souks, spices, and desert adventures.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
