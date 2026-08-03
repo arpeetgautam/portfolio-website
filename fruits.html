@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore fruits from different regions of the world, learn where they grow, and discover their flavor, nutrition, and cultural identity."
+    />
+    <title>Fruits — Arpit Gautam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .glass-card {
+        background: rgba(10, 14, 28, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+        border-radius: 24px;
+      }
+
+      .hero-copy {
+        margin-top: 3rem;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+      }
+
+      .stats-grid,
+      .fruit-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-top: 2rem;
+      }
+
+      .stat-block,
+      .fruit-card {
+        padding: 1.35rem;
+      }
+
+      .stat-block strong {
+        display: block;
+        font-size: 1.35rem;
+        color: var(--accent);
+        margin-bottom: 0.35rem;
+      }
+
+      .stat-block span,
+      .fruit-details,
+      .section-intro p {
+        color: var(--muted);
+        line-height: 1.68;
+      }
+
+      .fruit-card h3 {
+        margin: 0.9rem 0 0.5rem;
+        font-size: 1.18rem;
+      }
+
+      .fruit-image {
+        height: 210px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9fc8ff;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(82, 173, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .section-intro {
+        max-width: 860px;
+        margin: 0 auto 1.5rem;
+        text-align: center;
+      }
+
+      .section-intro h2 {
+        margin: 0 0 0.6rem;
+        font-size: 1.72rem;
+      }
+
+      .fruit-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.8rem;
+      }
+
+      .meta-pill {
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        color: #d8e2ff;
+        font-size: 0.83rem;
+      }
+
+      @media (max-width: 700px) {
+        .hero {
+          padding: 48px 20px 36px;
+        }
+
+        main {
+          padding: 0 20px 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="background-glow" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <header class="hero">
+        <div class="hero-top">
+          <div class="brand">
+            <div class="brand__mark"><span>A</span></div>
+            <div class="brand__name">
+              <strong>Arpit Gautam</strong>
+              <small>Digital Marketing & Fullstack</small>
+            </div>
+          </div>
+
+          <nav class="main-nav" aria-label="Primary navigation">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="images.html">Gallery</a>
+            <a class="nav-link" href="resources.html">Resources</a>
+            <a class="nav-link" href="marketing-tips.html">Marketing Tips</a>
+            <a class="nav-link" href="makeup-tips.html">Makeup Tips</a>
+            <a class="nav-link" href="health-tips.html">Health Tips</a>
+            <a class="nav-link" href="meditation-tips.html">Meditation Tips</a>
+            <a class="nav-link" href="longevity-tips.html">Longevity Tips</a>
+            <a class="nav-link" href="digital-detox.html">Digital Detox</a>
+            <a class="nav-link" href="age-like-wine.html">Age Like Wine</a>
+            <a class="nav-link" href="women-hormone-health.html"
+              >Women's Hormone Health</a
+            >
+            <a class="nav-link active" href="fruits.html">Fruits</a>
+            <a class="nav-link" href="travel.html">Travel</a>
+          </nav>
+        </div>
+
+        <div class="hero-copy">
+          <p class="label">World fruit atlas</p>
+          <h1>Fruits from every corner of the world.</h1>
+          <p class="lead">
+            Nature has blessed every region with its own fruit identity. From
+            the rich sweetness of mangoes to the bold character of durian,
+            fruits carry culture, climate, color, and nutrition in every bite.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#fruit-grid">Explore fruits</a>
+            <a class="button--ghost" href="#regions">Regional highlights</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section">
+          <div class="section-intro">
+            <h2>Why fruits matter so much globally</h2>
+            <p>
+              Fruits are among the oldest and most global foods in human
+              history. They vary by climate, geography, and cultural preference,
+              and each region has fruits that define local food traditions,
+              nutrient diversity, and seasonal rhythm.
+            </p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="glass-card stat-block">
+              <strong>8 featured fruits</strong>
+              <span>From Asia, Europe, the Americas, and Oceania.</span>
+            </article>
+            <article class="glass-card stat-block">
+              <strong>4 world regions</strong>
+              <span
+                >Each fruit reflects climate, geography, and local taste.</span
+              >
+            </article>
+            <article class="glass-card stat-block">
+              <strong>Color & nutrition</strong>
+              <span
+                >Fruit diversity gives every continent a unique profile.</span
+              >
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="fruit-grid">
+          <div class="section-intro">
+            <h2>Featured fruits from different parts of the world</h2>
+            <p>
+              A quick visual tour of some of the best-known fruits that carry a
+              clear regional identity and a strong cultural presence.
+            </p>
+          </div>
+
+          <div class="fruit-grid">
+            <article class="glass-card fruit-card">
+              <img
+                class="fruit-image"
+                alt="Mango fruit"
+                src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=900&q=80"
+              />
+              <div class="chip">Asia</div>
+              <h3>Mango</h3>
+              <p class="fruit-details">
+                Mango is one of the most loved tropical fruits in South Asia,
+                Southeast Asia, and parts of the Middle East. It is known for
+                its sweetness, aroma, and rich vitamin C content.
+              </p>
+              <div class="fruit-meta">
+                <span class="meta-pill">South Asia</span>
+                <span class="meta-pill">Sweet</span>
+              </div>
+            </article>
+
+            <article class="glass-card fruit-card">
+              <img
+                class="fruit-image"
+                alt="Apple fruit"
+                src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=900&q=80"
+              />
+              <div class="chip">Europe & North America</div>
+              <h3>Apple</h3>
+              <p class="fruit-details">
+                Apples are among the most widely consumed fruits on the planet.
+                They grow across Europe, Asia, and North America and are valued
+                for convenience, crunch, and long storage life.
+              </p>
+              <div class="fruit-meta">
+                <span class="meta-pill">Global staple</span>
+                <span class="meta-pill">Crisp</span>
+              </div>
+            </article>
+
+            <article class="glass-card fruit-card">
+              <img
+                class="fruit-image"
+                alt="Banana fruit"
+                src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=900&q=80"
+              />
+              <div class="chip">Latin America</div>
+              <h3>Banana</h3>
+              <p class="fruit-details">
+                Bananas are a cornerstone fruit in tropical regions and are one
+                of the most accessible fruits worldwide. They are popular for
+                potassium, quick energy, and easy portability.
+              </p>
+              <div class="fruit-meta">
+                <span class="meta-pill">Tropical</span>
+                <span class="meta-pill">Energy fruit</span>
+              </div>
+            </article>
+
+            <article class="glass-card fruit-card">
+              <img
+                class="fruit-image"
+                alt="Durian fruit"
+                src="https://images.unsplash.com/photo-1600690035423-4b49acb4ce0e?auto=format&fit=crop&w=900&q=80"
+              />
+              <div class="chip">Southeast Asia</div>
+              <h3>Durian</h3>
+              <p class="fruit-details">
+                Durian is famous in Thailand, Malaysia, and Indonesia. It is
+                often described as rich, creamy, and intensely aromatic, and it
+                holds a major place in Southeast Asian fruit culture.
+              </p>
+              <div class="fruit-meta">
+                <span class="meta-pill">Strong aroma</span>
+                <span class="meta-pill">Premium tropical</span>
+              </div>
+            </article>
+
+            <article class="glass-card fruit-card">
+              <img
+                class="fruit-image"
+                alt="Dragon fruit"
+                src="https://images.unsplash.com/photo-1585059895524-72359e06133a?auto=format&fit=crop&w=900&q=80"
+              />
+              <div class="chip">Central America & Asia</div>
+              <h3>Dragon Fruit</h3>
+              <p class="fruit-details">
+                Dragon fruit is widely associated with tropical agriculture in
+                Mexico, Central America, and parts of Southeast Asia. Its bright
+                appearance and mild sweetness make it one of the most striking
+                fruits in the world.
+              </p>
+              <div class="fruit-meta">
+                <span class="meta-pill">Colorful</span>
+                <span class="meta-pill">Tropical</span>
+              </div>
+            </article>
+
+            <article class="glass-card fruit-card">
+              <img
+                class="fruit-image"
+                alt="Kiwi fruit"
+                src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=900&q=80"
+              />
+              <div class="chip">Oceania</div>
+              <h3>Kiwi</h3>
+              <p class="fruit-details">
+                Native to China but strongly associated with New Zealand, kiwi
+                fruit is loved for its green flesh, tangy flavor, and high
+                vitamin C content. It is one of the most recognizable fruits in
+                the modern global fruit market.
+              </p>
+              <div class="fruit-meta">
+                <span class="meta-pill">Tangy</span>
+                <span class="meta-pill">Vitamins</span>
+              </div>
+            </article>
+
+            <article class="glass-card fruit-card">
+              <img
+                class="fruit-image"
+                alt="Pineapple fruit"
+                src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=900&q=80"
+              />
+              <div class="chip">South America</div>
+              <h3>Pineapple</h3>
+              <p class="fruit-details">
+                Pineapple is deeply linked with tropical farming and is
+                especially associated with Brazil and Central American
+                agriculture. It is known for its bright flavors, juicy flesh,
+                and tropical scent.
+              </p>
+              <div class="fruit-meta">
+                <span class="meta-pill">Juicy</span>
+                <span class="meta-pill">Tropical</span>
+              </div>
+            </article>
+
+            <article class="glass-card fruit-card">
+              <img
+                class="fruit-image"
+                alt="Pomegranate fruit"
+                src="https://images.unsplash.com/photo-1587735240989-3b4045f7afb9?auto=format&fit=crop&w=900&q=80"
+              />
+              <div class="chip">Mediterranean</div>
+              <h3>Pomegranate</h3>
+              <p class="fruit-details">
+                Pomegranate has deep roots in Mediterranean and Middle Eastern
+                cultures. It is admired for its jewel-like seeds, antioxidant
+                reputation, and strong connection to traditional healthy eating.
+              </p>
+              <div class="fruit-meta">
+                <span class="meta-pill">Antioxidants</span>
+                <span class="meta-pill">Ancient fruit</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="regions">
+          <div class="section-intro">
+            <h2>What makes fruits so region-specific?</h2>
+            <p>
+              Climate, soil, rainfall, elevation, and traditional farming all
+              shape which fruits a region can grow well. That is why a fruit can
+              be a symbol of place, culture, and seasonal identity all at once.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
