@@ -426,6 +426,15 @@ main {
   );
 }
 
+.featured-family--friends {
+  grid-template-columns: 0.85fr 1.15fr;
+  background: linear-gradient(
+    135deg,
+    rgba(152, 126, 255, 0.16),
+    rgba(255, 255, 255, 0.05)
+  );
+}
+
 .featured-family__content {
   display: grid;
   gap: 12px;
@@ -765,7 +774,8 @@ main {
   }
 
   .featured-family,
-  .featured-family--secondary {
+  .featured-family--secondary,
+  .featured-family--friends {
     grid-template-columns: 1fr;
   }
 }
