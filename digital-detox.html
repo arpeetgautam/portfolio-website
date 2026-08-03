@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Digital detox and brain health guide covering practical detox methods, focus restoration, mental clarity, and consistent healthy routines."
+    />
+    <title>Digital Detox & Brain Health — Arpit Gautam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .glass-card {
+        background: rgba(10, 14, 28, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+        border-radius: 24px;
+      }
+
+      .hero-copy {
+        margin-top: 3rem;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .stat-block {
+        padding: 1.2rem 1.3rem;
+      }
+
+      .stat-block strong {
+        display: block;
+        font-size: 1.4rem;
+        color: var(--accent);
+        margin-bottom: 0.35rem;
+      }
+
+      .stat-block span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .detox-grid,
+      .brain-grid,
+      .routine-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-top: 2rem;
+      }
+
+      .detox-card,
+      .brain-card,
+      .routine-card {
+        padding: 1.4rem;
+      }
+
+      .detox-card h3,
+      .brain-card h3,
+      .routine-card h3 {
+        margin: 0.5rem 0 0.8rem;
+        font-size: 1.18rem;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9fc8ff;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(82, 173, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .detox-list,
+      .brain-list,
+      .routine-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .detox-list li,
+      .brain-list li,
+      .routine-list li {
+        padding: 0.8rem 0.95rem;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #d8e2ff;
+        line-height: 1.55;
+      }
+
+      .section-intro {
+        max-width: 820px;
+        margin: 0 auto 1.5rem;
+        text-align: center;
+      }
+
+      .section-intro h2 {
+        margin: 0 0 0.6rem;
+        font-size: 1.7rem;
+      }
+
+      .section-intro p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      @media (max-width: 700px) {
+        .hero {
+          padding: 48px 20px 36px;
+        }
+
+        main {
+          padding: 0 20px 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="background-glow" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <header class="hero">
+        <div class="hero-top">
+          <div class="brand">
+            <div class="brand__mark"><span>A</span></div>
+            <div class="brand__name">
+              <strong>Arpit Gautam</strong>
+              <small>Digital Marketing & Fullstack</small>
+            </div>
+          </div>
+
+          <nav class="main-nav" aria-label="Primary navigation">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="images.html">Gallery</a>
+            <a class="nav-link" href="resources.html">Resources</a>
+            <a class="nav-link" href="marketing-tips.html">Marketing Tips</a>
+            <a class="nav-link" href="makeup-tips.html">Makeup Tips</a>
+            <a class="nav-link" href="health-tips.html">Health Tips</a>
+            <a class="nav-link" href="meditation-tips.html">Meditation Tips</a>
+            <a class="nav-link" href="longevity-tips.html">Longevity Tips</a>
+            <a class="nav-link active" href="digital-detox.html"
+              >Digital Detox</a
+            >
+            <a class="nav-link" href="travel.html">Travel</a>
+          </nav>
+        </div>
+
+        <div class="hero-copy">
+          <p class="label">Mindful reset</p>
+          <h1>
+            Digital detox and brain health for better clarity, calm, and focus.
+          </h1>
+          <p class="lead">
+            Explore how to reduce screen overload, improve attention, protect
+            your mental energy, and build a healthier relationship with your
+            devices through a structured digital reset.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#detox">Digital detox ways</a>
+            <a class="button--ghost" href="#brain">Brain health</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section">
+          <div class="section-intro">
+            <h2>Why digital detox matters in a connected world.</h2>
+            <p>
+              Constant notifications, endless content, and screen-driven
+              routines can drain focus, interrupt sleep, and increase mental
+              fatigue. A digital detox helps restore attention and emotional
+              balance.
+            </p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="glass-card stat-block">
+              <strong>4 zones</strong>
+              <span
+                >Key areas of digital detox: screen time, triggers, breaks, and
+                recovery.</span
+              >
+            </article>
+            <article class="glass-card stat-block">
+              <strong>5 brain benefits</strong>
+              <span
+                >Improved focus, better mood regulation, stronger recovery, and
+                better sleep.
+              </span>
+            </article>
+            <article class="glass-card stat-block">
+              <strong>15–30 min</strong>
+              <span
+                >Even a small daily reset can noticeably improve clarity and
+                mental calm.</span
+              >
+            </article>
+          </div>
+
+          <div class="detox-grid" id="detox">
+            <article class="glass-card detox-card">
+              <div class="chip">Step 1</div>
+              <h3>Identify your biggest screen triggers</h3>
+              <ul class="detox-list">
+                <li>
+                  Notice when you reach for your phone out of habit rather than
+                  necessity.
+                </li>
+                <li>
+                  Track the apps, notifications, and habits that repeatedly
+                  steal your attention.
+                </li>
+                <li>
+                  Reduce the most distracting sources first instead of trying to
+                  cut everything at once.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card detox-card">
+              <div class="chip">Step 2</div>
+              <h3>Create screen-free windows</h3>
+              <ul class="detox-list">
+                <li>
+                  Set a no-phone hour during meals, study time, or in the early
+                  morning.
+                </li>
+                <li>
+                  Use a physical alarm, timer, or a paper planner instead of
+                  digital reminders.
+                </li>
+                <li>
+                  Choose one focused block each day where you avoid all
+                  non-essential screen use.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card detox-card">
+              <div class="chip">Step 3</div>
+              <h3>Replace passive scrolling with active recovery</h3>
+              <ul class="detox-list">
+                <li>
+                  Swap scrolling for reading, journaling, walking, stretching,
+                  or breathing.
+                </li>
+                <li>
+                  Give your mind a different kind of input so it can recover
+                  from constant stimulation.
+                </li>
+                <li>
+                  Spend a little time in nature or quiet spaces to reset your
+                  nervous system.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card detox-card">
+              <div class="chip">Step 4</div>
+              <h3>Protect your sleep</h3>
+              <ul class="detox-list">
+                <li>Stop screen use at least 30 to 60 minutes before bed.</li>
+                <li>
+                  Use warm light, soft sounds, and a low-stimulation environment
+                  for better rest.
+                </li>
+                <li>
+                  A calmer evening routine helps your brain transition into
+                  recovery mode.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-intro">
+            <h2>Detailed ways to do a digital detox.</h2>
+            <p>
+              A healthy digital detox is not about living in complete isolation.
+              It is about removing overload, protecting attention, and making
+              space for focus, rest, and real-life connection.
+            </p>
+          </div>
+
+          <div class="brain-grid" id="brain">
+            <article class="glass-card brain-card">
+              <div class="chip">Focus</div>
+              <h3>Do a partial detox</h3>
+              <ul class="brain-list">
+                <li>
+                  Turn off non-essential notifications for a few hours every
+                  day.
+                </li>
+                <li>
+                  Keep only essential communication available during focused
+                  work or study blocks.
+                </li>
+                <li>
+                  Reduce app switching so your brain has fewer interruptions to
+                  manage.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card brain-card">
+              <div class="chip">Attention</div>
+              <h3>Create a digital sunset</h3>
+              <ul class="brain-list">
+                <li>
+                  Choose a set time to stop entertainment platforms and push
+                  devices aside.
+                </li>
+                <li>
+                  Let your brain downshift gradually with music, reading, or
+                  quiet reflection.
+                </li>
+                <li>
+                  This helps reduce overstimulation and improves the next day’s
+                  mental clarity.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card brain-card">
+              <div class="chip">Recovery</div>
+              <h3>Take intentional offline breaks</h3>
+              <ul class="brain-list">
+                <li>
+                  Take 10-minute breaks from screens every hour when working
+                  long sessions.
+                </li>
+                <li>
+                  Walk, stand, hydrate, or do a simple stretch instead of
+                  opening another app.
+                </li>
+                <li>
+                  These tiny pauses restore attention far better than constant
+                  multitasking.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card brain-card">
+              <div class="chip">Routine</div>
+              <h3>Use a weekly reset</h3>
+              <ul class="brain-list">
+                <li>
+                  Once or twice a week, schedule a longer offline block for rest
+                  or wellness.
+                </li>
+                <li>
+                  Let this be a true “digital pause” without pressure to perform
+                  or respond.
+                </li>
+                <li>
+                  Recovery days help your brain stay balanced and improve
+                  resilience over time.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-intro">
+            <h2>Brain health benefits of a thoughtful digital detox.</h2>
+            <p>
+              A cleaner digital routine supports not only concentration but also
+              emotional regulation, restful sleep, and healthier cognitive
+              habits.
+            </p>
+          </div>
+
+          <div class="routine-grid">
+            <article class="glass-card routine-card">
+              <div class="chip">Mental clarity</div>
+              <h3>Better attention</h3>
+              <ul class="routine-list">
+                <li>
+                  Less constant switching helps your brain hold focus for longer
+                  periods.
+                </li>
+                <li>
+                  Attention becomes steadier when your environment is less
+                  distracting.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card routine-card">
+              <div class="chip">Mood</div>
+              <h3>Lower stress load</h3>
+              <ul class="routine-list">
+                <li>
+                  Fewer interruptions and less validation-seeking help reduce
+                  mental friction.
+                </li>
+                <li>
+                  Your nervous system has more space to feel calm instead of
+                  always “on.”
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card routine-card">
+              <div class="chip">Memory</div>
+              <h3>Improved cognitive recovery</h3>
+              <ul class="routine-list">
+                <li>
+                  Off-screen rest periods help your brain consolidate
+                  information better.
+                </li>
+                <li>
+                  Low stimulation gives your mind the quiet it needs to process,
+                  learn, and reset.
+                </li>
+              </ul>
+            </article>
+
+            <article class="glass-card routine-card">
+              <div class="chip">Sleep</div>
+              <h3>Healthier rest</h3>
+              <ul class="routine-list">
+                <li>
+                  Reducing late-night screen exposure improves sleep quality and
+                  recovery.
+                </li>
+                <li>
+                  Better sleep strengthens memory, mood, and emotional
+                  resilience the next day.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
