@@ -1,15 +1,15 @@
 :root {
   color-scheme: dark;
-  --bg: #04050b;
-  --surface: rgba(10, 12, 24, 0.75);
-  --surface-strong: rgba(14, 16, 35, 0.95);
-  --border: rgba(255, 255, 255, 0.12);
-  --text: #f8f8ff;
-  --muted: #a7a8c0;
-  --accent: #82d9ff;
-  --accent-strong: #5b99ff;
-  --glow: rgba(82, 173, 255, 0.22);
-  --shadow: 0 35px 120px rgba(0, 0, 0, 0.25);
+  --bg: #071014;
+  --surface: rgba(14, 27, 30, 0.78);
+  --surface-strong: rgba(18, 35, 37, 0.96);
+  --border: rgba(226, 245, 237, 0.14);
+  --text: #f4f8f2;
+  --muted: #a9bdb6;
+  --accent: #8ee3c1;
+  --accent-strong: #f1a36f;
+  --glow: rgba(103, 225, 179, 0.2);
+  --shadow: 0 35px 120px rgba(0, 0, 0, 0.32);
 }
 
 * {
@@ -26,7 +26,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family:
-    "Inter",
+    "DM Sans",
     "Manrope",
     system-ui,
     -apple-system,
@@ -34,8 +34,13 @@ body {
     "Segoe UI",
     sans-serif;
   background:
-    radial-gradient(circle at top, rgba(98, 85, 255, 0.2), transparent 25%),
-    linear-gradient(180deg, #04050b 0%, #06070f 42%, #090b15 100%);
+    radial-gradient(circle at 15% 0%, rgba(52, 157, 128, 0.2), transparent 28%),
+    radial-gradient(
+      circle at 88% 14%,
+      rgba(241, 163, 111, 0.12),
+      transparent 24%
+    ),
+    linear-gradient(180deg, #071014 0%, #091619 42%, #0b1b1c 100%);
   color: var(--text);
 }
 
@@ -44,8 +49,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(104, 72, 255, 0.12), transparent 32%),
-    linear-gradient(225deg, rgba(255, 122, 176, 0.08), transparent 28%);
+    linear-gradient(135deg, rgba(103, 225, 179, 0.1), transparent 32%),
+    linear-gradient(225deg, rgba(241, 163, 111, 0.08), transparent 28%);
   pointer-events: none;
   z-index: -1;
 }
@@ -191,6 +196,8 @@ textarea {
   gap: 12px;
   margin: 0;
   justify-content: center;
+  max-width: 100%;
+  scrollbar-width: thin;
 }
 
 .main-nav a {
@@ -198,9 +205,9 @@ textarea {
   align-items: center;
   justify-content: center;
   color: #fff;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(226, 245, 237, 0.07);
   padding: 12px 18px;
-  border-radius: 999px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -215,9 +222,9 @@ textarea {
 
 .main-nav a:hover,
 .main-nav a.active {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(142, 227, 193, 0.16);
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(142, 227, 193, 0.42);
 }
 
 .hero-copy {
@@ -235,6 +242,7 @@ textarea {
   letter-spacing: -0.05em;
   background: linear-gradient(90deg, #d5f0ff, #e9d0ff 40%, #ffcf8a);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -288,7 +296,7 @@ textarea {
 }
 
 .button {
-  background: linear-gradient(135deg, #7cc5ff, #8b83ff 48%, #ff9f7e);
+  background: linear-gradient(135deg, #8ee3c1, #f1a36f);
   color: #05070d;
   box-shadow: 0 22px 80px rgba(124, 197, 255, 0.18);
 }
@@ -299,7 +307,7 @@ textarea {
 
 .button--ghost {
   background: rgba(255, 255, 255, 0.06);
-  color: #e5ecff;
+  color: #e4f2ea;
   border-color: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(16px);
 }
@@ -325,7 +333,7 @@ main {
 .section-title .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: #9fc8ff;
+  color: var(--accent);
   font-size: 0.82rem;
 }
 
@@ -541,10 +549,11 @@ main {
   position: relative;
   max-width: 1100px;
   margin: 0 auto;
-  border-radius: 16px;
+  border-radius: 22px;
   overflow: hidden;
-  background: rgba(10, 12, 24, 0.6);
-  padding: 12px;
+  background: rgba(10, 25, 27, 0.72);
+  border: 1px solid var(--border);
+  padding: 14px;
 }
 .carousel__viewport {
   overflow: hidden;
@@ -753,7 +762,7 @@ main {
 }
 
 .footer {
-  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+  background: linear-gradient(135deg, #123d38 0%, #a9573c 100%);
   color: white;
   text-align: center;
   padding: 40px 20px;
@@ -790,7 +799,15 @@ main {
   }
 
   .main-nav {
+    width: 100%;
     justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .main-nav a {
+    flex: 0 0 auto;
   }
 
   .hero-copy h1 {
@@ -801,6 +818,25 @@ main {
     flex-direction: column;
     width: 100%;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 @media (max-width: 900px) {

@@ -12,26 +12,29 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Add animation on scroll
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.1 },
-);
+// Reveal cards only when motion is enabled and the observer is supported.
+const cards = document.querySelectorAll(".card");
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
+if (!reducedMotion && "IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
 
-// Observe all cards
-document.querySelectorAll(".card").forEach((card) => {
-  card.style.opacity = "0";
-  card.style.transform = "translateY(20px)";
-  card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  observer.observe(card);
-});
+  cards.forEach((card) => {
+    card.classList.add("reveal-card");
+    observer.observe(card);
+  });
+}
 
 console.log("Portfolio Website Loaded - Enhanced with smooth interactions");
 
@@ -68,6 +71,7 @@ console.log("Portfolio Website Loaded - Enhanced with smooth interactions");
     lbImg.alt = it.caption;
     lbCaption.textContent = it.caption;
     lb.setAttribute("aria-hidden", "false");
+    btnClose.focus();
     document.body.style.overflow = "hidden";
     // preload next
     const next = items[(index + 1) % items.length];
