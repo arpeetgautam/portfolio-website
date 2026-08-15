@@ -63,32 +63,83 @@ console.log("Portfolio Website Loaded - Enhanced with smooth interactions");
   }));
 
   let index = 0;
+  let isAnimating = false;
 
-  function open(i) {
-    index = i;
-    const it = items[index];
-    lbImg.src = it.webp || it.src;
-    lbImg.alt = it.caption;
-    lbCaption.textContent = it.caption;
-    lb.setAttribute("aria-hidden", "false");
-    btnClose.focus();
-    document.body.style.overflow = "hidden";
-    // preload next
-    const next = items[(index + 1) % items.length];
-    if (next) new Image().src = next.webp || next.src;
+  function open(i, direction = "none") {
+    if (isAnimating) return;
+    
+    // Initial open
+    if (lb.getAttribute("aria-hidden") === "true") {
+      lb.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      btnClose.focus();
+    } else {
+      isAnimating = true;
+      // Animate out current image
+      lbImg.style.opacity = '0';
+      lbImg.style.transform = direction === 'next' ? 'scale(0.95) translateX(-60px)' : 'scale(0.95) translateX(60px)';
+      lbCaption.style.opacity = '0';
+      lbCaption.style.transform = 'translateY(15px)';
+    }
+
+    setTimeout(() => {
+      index = i;
+      const it = items[index];
+      
+      // Set starting position for new image
+      lbImg.style.transition = 'none';
+      if (direction === 'next') lbImg.style.transform = 'scale(1.05) translateX(60px)';
+      else if (direction === 'prev') lbImg.style.transform = 'scale(1.05) translateX(-60px)';
+      else lbImg.style.transform = 'scale(0.9) translateY(20px)';
+      
+      lbImg.src = it.webp || it.src;
+      lbImg.alt = it.caption;
+      lbCaption.textContent = it.caption;
+
+      const finishAnimation = () => {
+        // Trigger reflow
+        void lbImg.offsetWidth;
+        
+        lbImg.style.transition = 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+        lbCaption.style.transition = 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.1s';
+        
+        lbImg.style.opacity = '1';
+        lbImg.style.transform = 'scale(1) translateX(0) translateY(0)';
+        
+        lbCaption.style.opacity = '1';
+        lbCaption.style.transform = 'translateY(0)';
+        
+        isAnimating = false;
+      };
+
+      if (lbImg.complete) {
+        finishAnimation();
+      } else {
+        lbImg.onload = finishAnimation;
+      }
+
+      // Preload next image
+      const nextItem = items[(index + 1) % items.length];
+      if (nextItem) new Image().src = nextItem.webp || nextItem.src;
+    }, direction === "none" ? 50 : 350); // wait for fade out if swiping
   }
 
   function close() {
-    lb.setAttribute("aria-hidden", "true");
-    lbImg.src = "";
-    document.body.style.overflow = "";
+    lbImg.style.opacity = '0';
+    lbImg.style.transform = 'scale(0.95) translateY(20px)';
+    lbCaption.style.opacity = '0';
+    setTimeout(() => {
+      lb.setAttribute("aria-hidden", "true");
+      lbImg.src = "";
+      document.body.style.overflow = "";
+    }, 400); 
   }
 
   function next() {
-    open((index + 1) % items.length);
+    open((index + 1) % items.length, 'next');
   }
   function prev() {
-    open((index - 1 + items.length) % items.length);
+    open((index - 1 + items.length) % items.length, 'prev');
   }
 
   triggers.forEach((t, i) => {
@@ -109,7 +160,7 @@ console.log("Portfolio Website Loaded - Enhanced with smooth interactions");
   });
 
   lb.addEventListener("click", (e) => {
-    if (e.target === lb) close();
+    if (e.target === lb || e.target.classList.contains("lightbox__stage")) close();
   });
 
   window.addEventListener("keydown", (e) => {
