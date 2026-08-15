@@ -4141,3 +4141,90 @@ h1, h2, .brand__name strong {
   border-top: 1px solid var(--glass-border) !important;
   box-shadow: none !important;
 }
+
+/* --- PREMIUM GALLERY OPTIMIZATION --- */
+main .gallery {
+  column-count: 3;
+  column-gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  display: block !important; /* Override grid */
+}
+
+@media (max-width: 900px) {
+  main .gallery { column-count: 2; }
+}
+
+@media (max-width: 600px) {
+  main .gallery { column-count: 1; }
+}
+
+main .gallery .img-card {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  display: block !important;
+  transform: translateZ(0); /* Hardware acceleration */
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease !important;
+}
+
+main .gallery .img-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.4) !important;
+  z-index: 10;
+}
+
+main .gallery .img-card img {
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  display: block;
+  border-radius: 0 !important;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.6s ease !important;
+  filter: brightness(0.85);
+}
+
+main .gallery .img-card:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1) saturate(1.1);
+}
+
+main .gallery .img-card .carousel__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 20px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #fff;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+main .gallery .img-card:hover .carousel__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhancing Curated section as well */
+main .curated-grid .img-card {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+main .curated-grid .img-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.3) !important;
+}
