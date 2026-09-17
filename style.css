@@ -271,17 +271,31 @@ textarea {
 .main-nav {
   display: flex;
 
-  flex-wrap: wrap;
+  flex: 1 1 680px;
+
+  flex-wrap: nowrap;
 
   gap: 12px;
 
   margin: 0;
 
-  justify-content: center;
+  justify-content: flex-end;
 
   max-width: 100%;
 
+  min-width: 0;
+
+  overflow-x: auto;
+
+  padding: 4px 2px 10px;
+
+  overscroll-behavior-inline: contain;
+
+  scroll-behavior: smooth;
+
   scrollbar-width: thin;
+
+  scrollbar-color: rgba(142, 227, 193, 0.55) transparent;
 }
 
 .main-nav a {
@@ -307,6 +321,8 @@ textarea {
 
   letter-spacing: 0.02em;
 
+  white-space: nowrap;
+
   border: 1px solid rgba(255, 255, 255, 0.15);
 
   transition:
@@ -324,6 +340,12 @@ textarea {
   transform: translateY(-2px);
 
   border-color: rgba(142, 227, 193, 0.42);
+}
+
+.main-nav a:focus-visible {
+  outline: 2px solid #8ee3c1;
+
+  outline-offset: 3px;
 }
 
 .hero-copy {
@@ -1481,10 +1503,6 @@ main {
     width: 100%;
 
     justify-content: flex-start;
-
-    flex-wrap: nowrap;
-
-    overflow-x: auto;
 
     padding-bottom: 8px;
   }
@@ -6564,6 +6582,33 @@ main .curated-grid .img-card:hover {
 .lightbox__nav:hover {
   background: rgba(255, 255, 255, 0.2) !important;
   transform: scale(1.1) !important;
+}
+
+/* Keep the primary navigation compact and horizontally scrollable. */
+.main-nav {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.main-nav a {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.hero-top {
+  min-width: 0;
+}
+
+@media (max-width: 680px) {
+  .main-nav {
+    flex: 0 1 auto;
+    width: 100% !important;
+  }
 }
 
 /* Dropdown Menu Styles */
