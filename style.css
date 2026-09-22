@@ -34,6 +34,30 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keep each document's height tied to its content. */
+body {
+  min-height: 0;
+}
+
+.hero {
+  min-height: 0;
+  padding-bottom: 48px;
+}
+
+main {
+  padding-bottom: 0;
+}
+
+.footer {
+  padding-bottom: 0;
+}
+
+@media (max-width: 820px) {
+  .hero {
+    padding-bottom: 48px;
+  }
+}
+
 body {
   margin: 0;
 
