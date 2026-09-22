@@ -7081,6 +7081,11 @@ html {
 
 /* Keep each document's height tied to its content. */
 body {
+  margin: 0;
+  min-height: 0;
+}
+
+body {
   min-height: 0;
 }
 
@@ -7095,6 +7100,14 @@ main {
 
 .footer {
   padding-bottom: 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer p + p {
+  margin-top: 10px;
 }
 
 .route-card {
