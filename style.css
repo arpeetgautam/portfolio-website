@@ -7101,6 +7101,19 @@ main {
   min-height: 0;
 }
 
+main > .section:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+body > .section:last-of-type .tips-card {
+  padding-bottom: 0;
+}
+
+body > .section:last-of-type .tips-card p:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 820px) {
   .hero {
     padding-bottom: 48px;
