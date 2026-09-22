@@ -7136,6 +7136,35 @@ body > .section {
   transform: none;
 }
 
+/* Keep legacy trailing fragments aligned when older pages contain orphaned nodes. */
+.page-shell > li,
+.page-shell > ul,
+.page-shell > h3,
+.page-shell > article {
+  width: min(100% - 64px, 1120px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-shell > li,
+.page-shell > ul {
+  line-height: 1.75;
+}
+
+.page-shell > li {
+  padding: 0;
+}
+
+.page-shell > ul {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.page-shell > article {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @media (max-width: 820px) {
   .hero {
     padding-bottom: 48px;
