@@ -7131,6 +7131,11 @@ body > .section {
   padding-top: 0;
 }
 
+.home-page .reveal {
+  opacity: 1;
+  transform: none;
+}
+
 @media (max-width: 820px) {
   .hero {
     padding-bottom: 48px;
