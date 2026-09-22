@@ -7114,6 +7114,10 @@ body > .section:last-of-type .tips-card p:last-child {
   margin-bottom: 0;
 }
 
+body > .section {
+  padding-top: 0;
+}
+
 @media (max-width: 820px) {
   .hero {
     padding-bottom: 48px;
