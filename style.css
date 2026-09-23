@@ -1538,6 +1538,32 @@ main {
   }
 }
 
+/* Gallery images keep their natural portrait or landscape orientation. */
+.gallery-card img,
+.featured-story__media img,
+.carousel__slide img {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: min(640px, 72vh) !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #080b14;
+}
+
+.gallery-card > .lightbox-trigger,
+.featured-story__media > .lightbox-trigger,
+.carousel__slide > .lightbox-trigger {
+  display: block;
+  line-height: 0;
+  background: #080b14;
+}
+
+.gallery-card img {
+  max-height: 520px !important;
+}
+
 :focus-visible {
   outline: 2px solid var(--accent);
 
@@ -7163,6 +7189,40 @@ body > .section {
 .page-shell > article {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+/* Preserve each gallery image's natural orientation instead of cropping it. */
+.gallery-card img,
+.featured-story__media img,
+.carousel__slide img {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: min(640px, 72vh);
+  object-fit: contain;
+  object-position: center;
+  background: #080b14;
+}
+
+.gallery-card > .lightbox-trigger,
+.featured-story__media > .lightbox-trigger,
+.carousel__slide > .lightbox-trigger {
+  display: block;
+  line-height: 0;
+  background: #080b14;
+}
+
+.gallery-card img {
+  max-height: 520px;
+}
+
+.featured-story__media img {
+  max-height: 640px;
+}
+
+.carousel__slide img {
+  max-height: min(640px, 72vh);
+  aspect-ratio: auto;
 }
 
 @media (max-width: 820px) {
